@@ -2,12 +2,21 @@ pipeline {
     agent {
         label 'agent1'
     }
+    enviornment {
+        course = 'jenkins'
+    }
+    options {
+        timeout(time: 30, unit: 'MINUTES') 
+        disableConcurrentBuilds()
 
     stages {
         stage ('build') {
             steps {
                 script {
-                    echo 'building'
+                    sh """
+                       echo "hello build"
+                       env
+                    """
                 }
             }
         }
@@ -26,7 +35,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             echo 'not completed'
