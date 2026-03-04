@@ -22,7 +22,8 @@ pipeline {
     }
     post {
         always {
-            echo 'not completed'    
+            echo 'not completed'
+            deleteder()    
         }
         success {
             echo 'sucess'
