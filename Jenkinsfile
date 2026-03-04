@@ -6,20 +6,27 @@ pipeline {
     stages {
         stage ('build') {
             steps {
-                echo 'building'
+                script {
+                    echo 'building'
+                }
             }
         }
         stage ('test') {
             steps {
-                echo 'testing'
+                script {
+                    echo 'building'
+                }
             }
         }
         stage ('deploy') {
             steps {
-                echo 'deploying'
+                script {
+                    echo 'building'
+                }
             }
         }
     }
+    
     post {
         always {
             echo 'not completed'
